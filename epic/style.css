@@ -1,0 +1,19 @@
+table, th, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  font-size: 1.25rem;
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  margin: 4rem;
+}
+
+img {
+  height: 30rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
