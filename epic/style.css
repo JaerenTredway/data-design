@@ -4,6 +4,17 @@ table, th, td {
   font-size: 1.25rem;
 }
 
+table {
+  margin-top: 2rem;
+  background-color: #ebeff4;
+}
+
+.tableHead {
+  font-weight: bold;
+  font-size: 26px;
+  color: #626466;
+}
+
 td {
   width: 15rem;
 }
@@ -21,7 +32,7 @@ p {
   font-size: 1.25rem;
 }
 
-table {
-  margin-top: 2rem;
+.relations {
+  width: 30rem;
 }
 

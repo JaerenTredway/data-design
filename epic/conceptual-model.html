@@ -20,11 +20,10 @@
     <h2>Entities and Attributes</h2>
     
     <table>
-      <thead>
-        <tr>
-          <td>Entity: user</td>
-        </tr>
-      </thead>
+      <tr>
+          <td class="tableHead">Entity: user</td>
+          <td></td>
+      </tr>
       <tr>
         <th>Attribute:</th>
         <th>notes:</th>
@@ -48,11 +47,10 @@
     </table>
     
     <table>
-      <thead>
-        <tr>
-          <td>Entity: question</td>
-        </tr>
-      </thead>
+      <tr>
+          <td class="tableHead">Entity: question</td>
+          <td></td>
+      </tr>
       <tr>
         <th>Attribute:</th>
         <th>notes:</th>
@@ -62,25 +60,20 @@
         <td>primary key</td>
       </tr>
       <tr>
-        <td>userID</td>
+        <td>questionUserID</td>
         <td>foreign key</td>
       </tr>
       <tr>
         <td>questionContent</td>
         <td></td>
       </tr>
-      <tr>
-        <td>questionAnswer</td>
-        <td></td>
-      </tr>
     </table>
     
     <table>
-      <thead>
-        <tr>
-          <td>Entity: answer</td>
-        </tr>
-      </thead>
+      <tr>
+          <td class="tableHead">Entity: answer</td>
+          <td></td>
+      </tr>
       <tr>
         <th>Attribute:</th>
         <th>notes:</th>
@@ -90,9 +83,14 @@
         <td>primary key</td>
       </tr>
       <tr>
-        <td>userID</td>
+        <td>answerUserID</td>
         <td>foreign key</td>
       </tr>
+      <tr>
+        <td>answerQuestionID</td>
+        <td>foreign key</td>
+      </tr>
+      <tr>
       <tr>
         <td>answerContent</td>
         <td></td>
@@ -100,11 +98,9 @@
     </table>
     
     <table>
-      <thead>
-        <tr>
-          <td>Entity: vote</td>
-        </tr>
-      </thead>
+      <tr>
+        <td class="tableHead">Entity: vote</td>
+        <td></td>
       <tr>
         <th>Attribute:</th>
         <th>notes:</th>
@@ -114,15 +110,32 @@
         <td>primary key</td>
       </tr>
       <tr>
-        <td>userID</td>
+        <td>voteUserID</td>
         <td>foreign key</td>
       </tr>
       <tr>
-        <td>answerID</td>
+        <td>voteAnswerID</td>
         <td>foreign key</td>
       </tr>
     </table>
     
+    <table class="relations">
+      <tr>
+        <th class="tableHead">Relations:</th>
+      </tr>
+      <tr>
+        <td>one user: answer many questions (one answer per question)</td>
+      </tr>
+      <tr>
+        <td>one user: vote on many answers (one vote per answer)</td>
+      </tr>
+      <tr>
+        <td>one question:  many answers</td>
+      </tr>
+      <tr>
+        <td>one answer:  many votes (but only one vote per one user)</td>
+      </tr>
+    </table>
     
   </body>
 </html>
