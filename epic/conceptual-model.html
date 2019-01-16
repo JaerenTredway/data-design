@@ -17,5 +17,112 @@
       <li><a href="./conceptual-model.html">Conceptual Model</a></li>
     </ul>
     
+    <h2>Entities and Attributes</h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <td>Entity: user</td>
+        </tr>
+      </thead>
+      <tr>
+        <th>Attribute:</th>
+        <th>notes:</th>
+      </tr>
+      <tr>
+        <td>userID</td>
+        <td>primary key</td>
+      </tr>
+      <tr>
+        <td>userName</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>userEmail</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>userPassword</td>
+        <td></td>
+      </tr>
+    </table>
+    
+    <table>
+      <thead>
+        <tr>
+          <td>Entity: question</td>
+        </tr>
+      </thead>
+      <tr>
+        <th>Attribute:</th>
+        <th>notes:</th>
+      </tr>
+      <tr>
+        <td>questionID</td>
+        <td>primary key</td>
+      </tr>
+      <tr>
+        <td>userID</td>
+        <td>foreign key</td>
+      </tr>
+      <tr>
+        <td>questionContent</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>questionAnswer</td>
+        <td></td>
+      </tr>
+    </table>
+    
+    <table>
+      <thead>
+        <tr>
+          <td>Entity: answer</td>
+        </tr>
+      </thead>
+      <tr>
+        <th>Attribute:</th>
+        <th>notes:</th>
+      </tr>
+      <tr>
+        <td>answerID</td>
+        <td>primary key</td>
+      </tr>
+      <tr>
+        <td>userID</td>
+        <td>foreign key</td>
+      </tr>
+      <tr>
+        <td>answerContent</td>
+        <td></td>
+      </tr>
+    </table>
+    
+    <table>
+      <thead>
+        <tr>
+          <td>Entity: vote</td>
+        </tr>
+      </thead>
+      <tr>
+        <th>Attribute:</th>
+        <th>notes:</th>
+      </tr>
+      <tr>
+        <td>voteID</td>
+        <td>primary key</td>
+      </tr>
+      <tr>
+        <td>userID</td>
+        <td>foreign key</td>
+      </tr>
+      <tr>
+        <td>answerID</td>
+        <td>foreign key</td>
+      </tr>
+    </table>
+    
+    
   </body>
 </html>
