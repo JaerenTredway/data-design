@@ -6,10 +6,10 @@ ALTER DATABASE jtredway CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 -- this is akin to reformatting and reinstalling Windows (OS X never needs a reinstall...) ;)
 -- never ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever ever
 -- do this on live data!!!!
-DROP TABLE IF EXISTS user;
-DROP TABLE IF EXISTS question;
-DROP TABLE IF EXISTS answer;
 DROP TABLE IF EXISTS vote;
+DROP TABLE IF EXISTS answer;
+DROP TABLE IF EXISTS question;
+DROP TABLE IF EXISTS user;
 
 -- the CREATE TABLE function is a function that takes tons of arguments to layout the table's schema
 CREATE TABLE user (
@@ -79,5 +79,44 @@ CREATE TABLE vote (
 	-- finally, create a composite foreign key with the two foreign keys
 	PRIMARY KEY(voteUserId, voteAnswerId)
 );
+
+INSERT INTO user (userId, userActivationToken, userName, userEmail, userHash) VALUES (
+    UUID(), 
+    "nananananananananananananananana", 
+    "jTredway", 
+    "jwilliamtredway@gmail.com",
+    "nananananananananananananananananananananananananananananananananananananananananananananananana"
+    );
+    
+/*
+INSERT INTO tweet(tweetId, tweetProfileId, tweetContent, tweetDate) VALUES (UNHEX("2435f00e555d455d92fdf34f1dd255e2"),
+    UNHEX("4d7342ff55c0483097a0da7b2b6a9d9d"), 
+    "I hate dates because I never get them", 
+    NOW());
+*/
+
+/*
+UPDATE table SET colunm1 = newValue1, column2 = newValue2, WHERE primaryKey = uuid;
+UPDATE tweet SET 
+    tweetProfileId = UNHEX("4d7342ff55c0483097a0da7b2b6a9d9d"),
+    tweetContent = "I get dates now",
+    tweetDate = NOW(),
+WHERE tweetId = UNHEX("2435f00e555d455d92fdf34f1dd255e2");
+*/
+
+/*
+DELETE FROM table WHERE primayKey = uuid;
+DELETE FROM tweet WHERE tweetId = UNHEX("2435f00e555d455d92fdf34f1dd255e2");
+*/
+
+
+
+
+
+
+
+
+
+
 
 
