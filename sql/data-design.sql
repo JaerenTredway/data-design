@@ -1,5 +1,5 @@
 -- The statement below sets the collation of the database to utf8
-ALTER DATABASE "data-design.sql" CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER DATABASE jtredway CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 -- this is a comment in SQL (yes, the space is needed!)
 -- these statements will drop the tables and re-add them
@@ -19,7 +19,7 @@ CREATE TABLE user (
 	userActivationToken CHAR(32),
 	userName VARCHAR(32) NOT NULL,
 	userEmail VARCHAR(128) NOT NULL,
-  -- use userHash instead of: userPassword VARCHAR(32) NOT NULL 
+  -- use profileHash instead of: userPassword VARCHAR(32) NOT NULL 
 	-- to make something optional, exclude the not null
 	userHash CHAR(97) NOT NULL,
 	-- to make sure duplicate data cannot exist, create a unique index
@@ -51,15 +51,15 @@ CREATE TABLE answer (
 	answerId BINARY(16) NOT NULL,
 	-- this is for a foreign key
 	answerUserId BINARY(16) NOT NULL,
-  answerQuestionId BINARY(16) NOT NULL,
+   answerQuestionId BINARY(16) NOT NULL,
 	answerContent VARCHAR(140) NOT NULL,
 	answerDate DATETIME(6) NOT NULL,
 	-- this creates an index before making a foreign key
 	INDEX(answerUserId),
-  INDEX(questionUserId),
+  INDEX(answerQuestionId),
 	-- this creates the actual foreign key relation
 	FOREIGN KEY(answerUserId) REFERENCES user(userId),
-  FOREIGN KEY(questionUserId) REFERENCES user(userId),
+  FOREIGN KEY(answerQuestionId) REFERENCES question(questionId),
 	-- and finally create the primary key
 	PRIMARY KEY(answerId)
 );
