@@ -69,7 +69,7 @@ WHERE question.questionContent = NOT NULL
 /**
 *@noinspection SqlResolve
 */
-SELECT *
+SELECT profileName
 FROM profile
 		JOIN question
 ON profile.profileId = question.questionProfileId
@@ -79,14 +79,12 @@ WHERE question.questionContent LIKE "%updated%"
 /**
 *@noinspection SqlResolve
 */
-SELECT voteAnswerId, COUNT(*)
-FROM vote
-/*FIXME*/
-;
+SELECT COUNT(*) FROM vote
+WHERE voteProfileId = 0x6EAFEA891CEC11E9A01314FEB5D6B71F;
+
 
 
 /*
-
 SELECT price,
 COUNT(*)
 FROM menu
